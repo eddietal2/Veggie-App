@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text="Back" icon="back"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
-
+  <h5>Please enter complete all the fields to sign up for veggie app!</h5>
+  <ion-input type="text" placeholder="First Name"></ion-input>
+  <ion-input type="text" placeholder="First Name"></ion-input>
+  <ion-input type="text" placeholder="Email"></ion-input>
+  <ion-input type="text" placeholder="Password"></ion-input>
+  <ion-button [routerLink]="['/routePath']" routerLinkActive="router-link-active" >
+    Sign Up!
+  </ion-button>
 </ion-content>
