@@ -10,7 +10,7 @@ export class SignUpThankYouPage implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     setTimeout(() => {
