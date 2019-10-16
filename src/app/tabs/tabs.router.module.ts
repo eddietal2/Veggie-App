@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../home/home.module').then(m => m.HomePageModule)
+              import('../pages/home/home.module').then(m => m.HomePageModule)
           }
         ]
       },
@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../recipes/recipes.module').then(m => m.RecipesPageModule)
+              import('../pages/recipes/recipes.module').then(m => m.RecipesPageModule)
           }
         ]
       },
@@ -33,7 +33,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../settings/settings.module').then(m => m.SettingsPageModule)
+              import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
           }
         ]
       },
