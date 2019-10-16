@@ -23,12 +23,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'settings',
+        path: 'profile',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
+              import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
           }
         ]
       },
