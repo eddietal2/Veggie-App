@@ -7,7 +7,10 @@ const routes: Routes = [
     loadChildren: './pages/landing-page/landing-page.module#LandingPagePageModule'
   },
   { path: 'landing-page', loadChildren: './pages/landing-page/landing-page.module#LandingPagePageModule' },
-  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' }
+  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+  { path: 'home',
+  loadChildren: () =>
+    import('./pages/home/home.module').then(m => m.HomePageModule) }
 ];
 @NgModule({
   imports: [
