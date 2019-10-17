@@ -2,51 +2,44 @@ const config = require('config');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const mongoose = require('mongoose');
+const crypto = require('crypto');
 
-//simple schema
-const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    minlength: 3,
-    maxlength: 50
-  },
+
+var userSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 255,
-    unique: true
+    unique: true,
+    required: true
   },
-  password: {
+  name: {
     type: String,
-    required: true,
-    minlength: 3,
-    maxlength: 255
+    required: true
   },
-  //give different access rights if admin or not 
-  isAdmin: Boolean
+  hash: String,
+  salt: String
 });
 
+// Set Password
+userSchema.methods.setPassword = function(password){
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+};
 
-//custom method to generate authToken 
-UserSchema.methods.generateAuthToken = function() { 
-  const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, config.get('myprivatekey')); //get the private key from the config file -> environment variable
-  return token;
-}
+// Validate Password
+userSchema.methods.validPassword = function(password) {
+  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+  return this.hash === hash;
+};
 
-const User = mongoose.model('User', UserSchema);
+// Generate a JSON Web Token
+userSchema.methods.generateJwt = function() {
+  var expiry = new Date();
+  expiry.setDate(expiry.getDate() + 7);
 
-//function to validate user 
-function validateUser(user) {
-  const schema = {
-    name: Joi.string().min(3).max(50).required(),
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(3).max(255).required()
-  };
-
-  return Joi.validate(user, schema);
-}
-
-exports.User = User; 
-exports.validate = validateUser;
+  return jwt.sign({
+    _id: this._id,
+    email: this.email,
+    name: this.name,
+    exp: parseInt(expiry.getTime() / 1000),
+  }, "MY_SECRET"); 
+};
