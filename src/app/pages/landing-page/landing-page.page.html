@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row align-items-center>
       <ion-col size="2"></ion-col>
       <ion-col size="8">
@@ -15,5 +15,18 @@
       </ion-col>
       <ion-col size="2"></ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+  <form style="margin-top: 100px;">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+    </div>
+    <button type="submit" style="background: blue; width: 100px; height: 20px; color: white;">Login</button>
+    
+  <a [routerLink]="['/register']">Sign Up</a>
+  </form>
 </ion-content>

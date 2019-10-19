@@ -7,12 +7,31 @@
   </ion-header>
 
 <ion-content>
-  <h5>Please enter complete all the fields to sign up for veggie app!</h5>
+  <!-- <h5>Please enter complete all the fields to sign up for veggie app!</h5>
   <ion-input type="text" placeholder="First Name"></ion-input>
   <ion-input type="text" placeholder="First Name"></ion-input>
   <ion-input type="text" placeholder="Email"></ion-input>
-  <ion-input type="text" placeholder="Password"></ion-input>
-  <ion-button [routerLink]="['/sign-up-verification']" routerLinkActive="router-link-active" >
+  <ion-input type="text" placeholder="Password"></ion-input> -->
+  <form (submit)="register()">
+
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+    </div>
+
+    <ion-button type="submit" class="btn btn-default">Register!</ion-button>
+  </form>
+  <!-- <ion-button [routerLink]="['/sign-up-verification']" routerLinkActive="router-link-active" >
     Sign Up!
-  </ion-button>
+  </ion-button> -->
 </ion-content>
