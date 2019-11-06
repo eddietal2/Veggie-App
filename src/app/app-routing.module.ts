@@ -15,7 +15,12 @@ const routes: Routes = [
   { path: 'sign-up-verification', loadChildren: './pages/sign-up-verification/sign-up-verification.module#SignUpVerificationPageModule' },
   { path: 'sign-up-thank-you', loadChildren: './pages/sign-up-thank-you/sign-up-thank-you.module#SignUpThankYouPageModule' },
   { path: 'home',
-   loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) }
+   loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
 ];
 
 @NgModule({
