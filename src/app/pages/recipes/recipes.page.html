@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Recipes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item [routerLink]="['/breakfast']" routerLinkActive="router-link-active" >
+      <ion-label>Breakfast</ion-label>
+      <br>
+      <p class="recipe-counter">recipes</p>
+    </ion-item>
+    <ion-item [routerLink]="['/lunch']" routerLinkActive="router-link-active" >
+      <ion-label>Lunch</ion-label>
+      <br>
+      <p class="recipe-counter">recipes</p>
+    </ion-item>
+    <ion-item [routerLink]="['/dinner']" routerLinkActive="router-link-active" >
+      <ion-label>Dinner</ion-label>
+      <br>
+      <p class="recipe-counter">recipes</p>
+    </ion-item>
+    <ion-item [routerLink]="['/snacks']" routerLinkActive="router-link-active" >
+      <ion-label>Snacks</ion-label>
+      <br>
+      <p class="recipe-counter">recipes</p>
+    </ion-item>
+  </ion-list>
+  <ion-button color="primary" expand="full">Add Recipe</ion-button>
+
+</ion-content>

@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  { path: 'breakfast', loadChildren: './pages/recipes/breakfast/breakfast.module#BreakfastPageModule' },
+  { path: 'lunch', loadChildren: './pages/recipes/lunch/lunch.module#LunchPageModule' },
+  { path: 'dinner', loadChildren: './pages/recipes/dinner/dinner.module#DinnerPageModule' },
+  { path: 'snacks', loadChildren: './pages/recipes/snacks/snacks.module#SnacksPageModule' },
 ];
 
 @NgModule({

@@ -1,1 +1,17 @@
+ion-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
+ion-item {
+  --min-height: 75px;
+  --border-color: rgba(0,0,0,0.1);
+}
+
+.recipe-counter{
+  font-size: 0.7em;
+  position: relative;
+  right: 30px;
+  opacity: 0.3;
+}
