@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Recipes
+      My Recipes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,6 +29,6 @@
       <p class="recipe-counter">recipes</p>
     </ion-item>
   </ion-list>
-  <ion-button color="primary" expand="full">Add Recipe</ion-button>
+  <ion-button text-center [routerLink]="['/add-meal']" routerLinkActive="router-link-active"  color="primary" shape="round">Add Recipe</ion-button>
 
 </ion-content>
