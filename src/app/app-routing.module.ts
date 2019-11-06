@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'lunch', loadChildren: './pages/recipes/lunch/lunch.module#LunchPageModule' },
   { path: 'dinner', loadChildren: './pages/recipes/dinner/dinner.module#DinnerPageModule' },
   { path: 'snacks', loadChildren: './pages/recipes/snacks/snacks.module#SnacksPageModule' },
+  { path: 'add-meal', loadChildren: './pages/recipes/add-meal/add-meal.module#AddMealPageModule' },
 ];
 
 @NgModule({
