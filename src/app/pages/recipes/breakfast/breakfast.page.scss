@@ -1,0 +1,17 @@
+ion-content {
+  --padding: 40px;
+}
+
+ion-item {
+  --min-height: 75px;
+  --border-color: rgba(0,0,0,0.1);
+}
+
+ion-button {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  --border-radius: 50px;
+}

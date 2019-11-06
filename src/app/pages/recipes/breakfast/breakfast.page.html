@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>breakfast</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content>  
+  <ion-list>
+      <ion-list-header>
+          Breakfast
+      </ion-list-header>
+      <ion-item>
+          <ion-label>
+            <h2>Name of Meal</h2>
+            <h4>3 Pancakes</h4>
+            <h4>1/2 Cup of Potatoes</h4>
+          </ion-label>
+          <p style="opacity: 0.5;">edit</p>
+        </ion-item>
+  </ion-list>
+  <ion-button [routerLink]="['/add-meal']" routerLinkActive="router-link-active" >Add</ion-button>
 </ion-content>
